@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Oracle</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="login-screen">
+    <div class="login-box">
+      <h1>Chat Oracle</h1>
+      <p>Powered by Oracle + ChatGPT</p>
+      <input type="password" id="password-input" placeholder="Enter password" autofocus>
+      <button id="login-btn">Login</button>
+      <p id="login-error" class="error"></p>
+    </div>
+  </div>
+
+  <div id="app" class="hidden">
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <button id="new-chat-btn">+ New Chat</button>
+      </div>
+      <div class="sidebar-project">
+        <input type="text" id="project-url" placeholder="GPT Project URL (optional)">
+      </div>
+      <div id="conversation-list"></div>
+      <div class="sidebar-footer">
+        <button id="logout-btn">Logout</button>
+      </div>
+    </aside>
+
+    <main id="chat-area">
+      <div id="chat-header">
+        <button id="sidebar-toggle">&#9776;</button>
+        <span id="chat-title">New Chat</span>
+        <span id="model-badge">GPT-5.4 Pro</span>
+      </div>
+
+      <div id="messages">
+        <div class="welcome">
+          <h2>Chat Oracle</h2>
+          <p>Send a message to start chatting with ChatGPT</p>
+        </div>
+      </div>
+
+      <div id="input-area">
+        <div id="file-preview"></div>
+        <div id="input-row">
+          <label id="file-label" title="Upload files">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48"/></svg>
+            <input type="file" id="file-input" multiple hidden>
+          </label>
+          <textarea id="message-input" placeholder="Send a message..." rows="1"></textarea>
+          <button id="send-btn" title="Send">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
