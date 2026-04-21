@@ -11,8 +11,10 @@
     <div class="login-box">
       <h1>Chat Oracle</h1>
       <p>Powered by Oracle + ChatGPT</p>
-      <input type="password" id="password-input" placeholder="Enter password" autofocus>
+      <input type="text" id="username-input" placeholder="Username" autofocus>
+      <input type="password" id="password-input" placeholder="Password">
       <button id="login-btn">Login</button>
+      <button id="register-btn" class="btn-secondary">Register</button>
       <p id="login-error" class="error"></p>
     </div>
   </div>
@@ -25,8 +27,16 @@
       <div class="sidebar-project">
         <input type="text" id="project-url" placeholder="GPT Project URL (optional)">
       </div>
+      <div id="admin-panel" class="hidden">
+        <div class="sidebar-admin">
+          <select id="user-filter">
+            <option value="">My Chats</option>
+          </select>
+        </div>
+      </div>
       <div id="conversation-list"></div>
       <div class="sidebar-footer">
+        <div id="user-info"></div>
         <button id="logout-btn">Logout</button>
       </div>
     </aside>

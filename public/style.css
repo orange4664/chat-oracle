@@ -44,16 +44,8 @@ body {
   min-width: 360px;
 }
 
-.login-box h1 {
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-.login-box p {
-  color: var(--text-dim);
-  margin-bottom: 24px;
-  font-size: 14px;
-}
+.login-box h1 { font-size: 28px; margin-bottom: 8px; }
+.login-box p { color: var(--text-dim); margin-bottom: 24px; font-size: 14px; }
 
 .login-box input {
   width: 100%;
@@ -79,15 +71,24 @@ body {
   font-size: 16px;
   cursor: pointer;
   transition: background 0.2s;
+  margin-bottom: 8px;
 }
 
 .login-box button:hover { background: var(--accent-hover); }
 
-/* App Layout */
-#app {
-  display: flex;
-  height: 100vh;
+.login-box .btn-secondary {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
 }
+
+.login-box .btn-secondary:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+/* App Layout */
+#app { display: flex; height: 100vh; }
 
 /* Sidebar */
 #sidebar {
@@ -100,13 +101,9 @@ body {
   transition: margin-left 0.3s;
 }
 
-#sidebar.collapsed {
-  margin-left: calc(-1 * var(--sidebar-width));
-}
+#sidebar.collapsed { margin-left: calc(-1 * var(--sidebar-width)); }
 
-.sidebar-header {
-  padding: 12px;
-}
+.sidebar-header { padding: 12px; }
 
 #new-chat-btn {
   width: 100%;
@@ -122,9 +119,7 @@ body {
 
 #new-chat-btn:hover { background: var(--bg-hover); }
 
-.sidebar-project {
-  padding: 0 12px 12px;
-}
+.sidebar-project { padding: 0 12px 12px; }
 
 .sidebar-project input {
   width: 100%;
@@ -138,6 +133,25 @@ body {
 }
 
 .sidebar-project input:focus { border-color: var(--accent); }
+
+/* Admin panel */
+.sidebar-admin {
+  padding: 0 12px 12px;
+}
+
+.sidebar-admin select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+}
+
+.sidebar-admin select:focus { border-color: var(--accent); }
 
 #conversation-list {
   flex: 1;
@@ -165,6 +179,12 @@ body {
 
 .conv-item .conv-title { flex: 1; overflow: hidden; text-overflow: ellipsis; }
 
+.conv-item .conv-user {
+  color: var(--accent);
+  font-size: 11px;
+  margin-right: 4px;
+}
+
 .conv-item .conv-delete {
   display: none;
   background: none;
@@ -181,6 +201,13 @@ body {
 .sidebar-footer {
   padding: 12px;
   border-top: 1px solid var(--border);
+}
+
+#user-info {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 #logout-btn {
@@ -222,11 +249,7 @@ body {
   padding: 4px;
 }
 
-#chat-title {
-  flex: 1;
-  font-size: 16px;
-  font-weight: 500;
-}
+#chat-title { flex: 1; font-size: 16px; font-weight: 500; }
 
 #model-badge {
   font-size: 12px;
